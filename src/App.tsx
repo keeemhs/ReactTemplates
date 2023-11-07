@@ -1,14 +1,15 @@
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
+import { Home, menu1, menu2, menu3, menu4 } from './pages';
 
-function App() {
+export default function App() {
     return (
-        <>
-            <BrowserRouter>
-                <Header />
-            </BrowserRouter>
-        </>
+        <BrowserRouter>
+            <Header />
+
+            <Switch>
+                <Route Component={Home} path="/" exact />
+            </Switch>
+        </BrowserRouter>
     );
 }
-
-export default App;
